@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../_app/immutable/entry/start.CFwO19Zu.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.YFobN6Mh.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/fruYDLqp.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/DVcCeCWb.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CGqf8405.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Cbdj2qAo.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.D-Peckbl.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.B1veQxFb.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BkYfdh9H.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BD3UdjSR.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/wnmzq4eU.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/TGQFHf5e.js" rel="modulepreload">
 		<link href="../../_app/immutable/nodes/0.CCpBT1ka.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/ybC49tkz.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/5.vQYf8-ZR.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/CTX6hDir.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/5.Cg55_wjC.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BgdnnhQy.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DFPV7QJw.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/M7cEM8C8.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/iXLSwIXB.js" rel="modulepreload">
@@ -33,19 +33,19 @@ Neither the parser fix nor the form retirement touches it. Keep its ticket open.
 2 March goes out as 3 February. Fixed 5 October.</li> <li><strong><code>hint</code></strong>: the <code>booking-v3</code> form prints <code>MM/DD/YYYY</code> under its date field, then reads the field day first.
 People type what the hint says and get a swapped date. Only form reports from <code>booking-v3</code> tenants.
 Won’t fix: the form is retired.</li> <li><strong><code>shift</code></strong>: not a swap. The date moves back one day, and only for some readers: Lisbon got Tuesday, Toronto got Monday.
-That is a time-zone bug. The desk noted these as one-day moves and counts them under <code>parser</code>. Still open.</li></ul> <h2>How each report was placed</h2> <p>Counted with the desk’s own view, as exported (<code>causes.ts</code>, the same logic as <code>CauseTable</code>):</p> <ol><li>One id, one report: the export repeats some rows across pages.</li> <li>The tenant decides: a form report from a <code>booking-v3</code> tenant is <code>hint</code>; any other report from a day-first tenant is <code>parser</code>.</li> <li>A report the desk read as a one-day move (<code>desk-notes.json</code>) stays counted under its tenant’s cause, and also makes the <code>shift</code> row.</li></ol> <p>The intake tag is not used. Intake guesses from the reporter’s browser, and the browser is not the tenant.</p> <h2>Lessons</h2> <ul><li>A shared subject is not a shared cause. Count by cause before you call a ticket known.</li> <li>Look past the biggest row. The largest group sets the ticket’s title; the smaller ones disappear under it.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-YRWG-W9TK</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+That is a time-zone bug. The desk noted these as one-day moves and counts them under <code>parser</code>. Still open.</li></ul> <h2>How each report was placed</h2> <p>Counted with the desk’s own view, as exported (<code>causes.ts</code>, the same logic as <code>CauseTable</code>):</p> <ol><li>One id, one report: the export repeats some rows across pages.</li> <li>The tenant decides: a form report from a <code>booking-v3</code> tenant is <code>hint</code>; any other report from a day-first tenant is <code>parser</code>.</li> <li>A report the desk read as a one-day move (<code>desk-notes.json</code>) stays counted under its tenant’s cause, and also makes the <code>shift</code> row.</li></ol> <p>The intake tag is not used. Intake guesses from the reporter’s browser, and the browser is not the tenant.</p> <h2>Lessons</h2> <ul><li>A shared subject is not a shared cause. Count by cause before you call a ticket known.</li> <li>Look past the biggest row. The largest group sets the ticket’s title; the smaller ones disappear under it.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-2RV1-H9JJ</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1b8fms1 = {
+					__sveltekit_lp820g = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.CFwO19Zu.js"),
-						import("../../_app/immutable/entry/app.D-Peckbl.js")
+						import("../../_app/immutable/entry/start.YFobN6Mh.js"),
+						import("../../_app/immutable/entry/app.B1veQxFb.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],

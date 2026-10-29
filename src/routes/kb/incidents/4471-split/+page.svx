@@ -4,7 +4,7 @@ title: '#4471 is three problems'
 owner: Aperezpe
 status: living
 reviewed: 2026-10-28
-signature: Aperezpe
+signature: 'v1.eyJzdWIiOiI1NTYyIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyNDI2NzgsImV4cCI6MTc5MzMyOTA3OH0.8IiL-NCbbdy79nNBm-31DXA4EeLlxGMiOZFFzBnukJw'
 ---
 
 <script>
