@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../_app/immutable/entry/start.BvoemOd3.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/fruYDLqp.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BjiF8ntd.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Cbdj2qAo.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.B4yikt9B.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BkYfdh9H.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BD3UdjSR.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/wnmzq4eU.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/TGQFHf5e.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.CCpBT1ka.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/ybC49tkz.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/5.DSkBNdfk.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/roBjLetG.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DFPV7QJw.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BxbUfnXU.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/iXLSwIXB.js" rel="modulepreload">
+		<!--e2jw2j--><!----><title>#4471 is three problems · support kb</title>
+		<link href="../../_app/immutable/assets/runbook.BhhgOc_n.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/Callout.yLErXQDM.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/5.ByYW67E9.css" rel="stylesheet">
+  </head>
+  <body>
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 is three problems</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Aperezpe</b></span> <span class="status proposed svelte-e2jw2j">proposed</span> <span class="svelte-e2jw2j">reviewed 2026-10-28 · 1 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> was merged by subject line (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>).
+Every report says “wrong date”, so every report landed in one ticket. Its page says one issue, one fix queued.
+The reports say three, and the queued fix closes one of them.</p> <aside class="warn svelte-17bri61"><!---->The parser fix does not close #4471. Two problems in it have no ticket of their own until now.<!----></aside><!----> <h2>The problems</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471 (427 rows in the export, 15 repeated) · <strong>3</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>tenants</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr class="svelte-1op6c6"><td class="svelte-1op6c6"><code>parser</code></td><td class="svelte-1op6c6">374</td><td class="svelte-1op6c6">11</td><td class="svelte-1op6c6">2026-04-01 → 2026-10-04</td><td class="svelte-1op6c6"><!--[0--><a href="https://github.com/Aperezpe/mega-s01e03-what-it-shows/issues/1">parser reads day-first dates month first</a><!--]--></td></tr><tr class="svelte-1op6c6"><td class="svelte-1op6c6"><code>hint</code></td><td class="svelte-1op6c6">33</td><td class="svelte-1op6c6">3</td><td class="svelte-1op6c6">2026-04-17 → 2026-09-22</td><td class="svelte-1op6c6"><!--[0--><a href="https://github.com/Aperezpe/mega-s01e03-what-it-shows/issues/2">booking-v3 hint says MM/DD</a><!--]--></td></tr><tr class="svelte-1op6c6"><td class="svelte-1op6c6"><code>shift</code></td><td class="svelte-1op6c6">5</td><td class="svelte-1op6c6">5</td><td class="svelte-1op6c6">2026-04-02 → 2026-10-04</td><td class="svelte-1op6c6"><!--[0--><a href="https://github.com/Aperezpe/mega-s01e03-what-it-shows/issues/3">bookings shift one day across time zones</a><!--]--></td></tr><!--]--></tbody></table><!----> <ul><li><strong><code>parser</code></strong>: the shared parser reads every date month first, and every tenant on file writes the day first.
+2 March goes out as 3 February. This is the fix already queued.</li> <li><strong><code>hint</code></strong>: the <code>booking-v3</code> form prints <code>MM/DD/YYYY</code> under its date field, then reads the field day first.
+People type what the hint says and get a swapped date. Only form reports from <code>booking-v3</code> tenants.
+Fixing the parser does not touch it.</li> <li><strong><code>shift</code></strong>: not a swap. The date moves back one day, and only for some readers: Lisbon got Tuesday, Toronto got Monday.
+That is a time-zone bug. The desk already noted these as one-day moves, then counted them under <code>parser</code>.</li></ul> <h2>How each report was placed</h2> <ol><li>One id, one report: the export repeats some rows across pages.</li> <li>A report the desk read as a one-day move (<code>desk-notes.json</code>) is <code>shift</code>.</li> <li>Otherwise the tenant decides (<code>causes.ts</code>): a form report from a <code>booking-v3</code> tenant is <code>hint</code>; any other report from a day-first tenant is <code>parser</code>.</li></ol> <p>The intake tag is not used. Intake guesses from the reporter’s browser, and the browser is not the tenant.</p> <h2>Lessons</h2> <ul><li>A shared subject is not a shared cause. Count by cause before you call a ticket known.</li> <li>Look past the biggest row. The largest group sets the ticket’s title; the smaller ones disappear under it.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-YRWG-W9TK</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_pgmh9u = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.BvoemOd3.js"),
+						import("../../_app/immutable/entry/app.B4yikt9B.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>
