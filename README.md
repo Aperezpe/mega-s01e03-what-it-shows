@@ -37,6 +37,6 @@ Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
 
 ## #4471 split (S01E03)
 
-- Page: `src/routes/kb/incidents/4471-split/+page.svx`, numbers from `src/lib/kb/ProblemTable.svelte` and `src/lib/kb/problems.ts`.
+- Page: `src/routes/kb/incidents/4471-split/+page.svx`, numbers from `src/lib/kb/ProblemTable.svelte` (the desk's `causes.ts`).
 - As the desk sees it: `rendered/kb/incidents/4471-split.html` (static build, `npm install && npm run build`) and `rendered/4471-split.jpg`.
-- Tickets: [#1 parser](https://github.com/Aperezpe/mega-s01e03-what-it-shows/issues/1) · [#2 hint](https://github.com/Aperezpe/mega-s01e03-what-it-shows/issues/2) · [#3 shift](https://github.com/Aperezpe/mega-s01e03-what-it-shows/issues/3).
+- Tickets: [#1 parser, fixed](https://github.com/Aperezpe/mega-s01e03-what-it-shows/issues/1) · [#2 hint, won't fix](https://github.com/Aperezpe/mega-s01e03-what-it-shows/issues/2) · [#3 shift, open](https://github.com/Aperezpe/mega-s01e03-what-it-shows/issues/3).
